@@ -1,0 +1,18 @@
+{
+  "description": "Test Odoo model methods with auto-generated scenarios and get a report showing where and why they fail — without changing your database.",
+  "command.runScenarios": "Test method scenarios",
+  "command.configure": "Configure Odoo connection",
+  "command.checkConnection": "Check Odoo connection",
+  "command.clearResults": "Clear test results from the editor",
+  "config.pythonPath": "Path to the Python where Odoo requirements are installed. **Leave empty to use the Python selected in VS Code** (`Python: Select Interpreter`).",
+  "config.odooPath": "Path to the Odoo folder that contains `odoo-bin`.",
+  "config.configFile": "Path to `odoo.conf` (addons_path and database connection). Supports `${workspaceFolder}`.",
+  "config.database": "Database name. Leave empty to use `db_name` from the configuration file. **Use a test copy, not production.**",
+  "config.runAsUser": "Login of the user that runs the scenarios. Default: the administrator (admin).",
+  "config.timeoutSeconds": "Maximum time per scenario, in seconds (Linux and macOS).",
+  "config.maxScenarios": "Maximum number of scenarios per test.",
+  "config.allowProductionDatabase": "Allow running on databases whose name contains `prod` or `live`. Changes are always rolled back, but running on production is not recommended.",
+  "config.enableCodeLens": "Show a “Test scenarios” button above Odoo model methods.",
+  "config.language": "Language of reports and messages. Command titles and setting descriptions follow the VS Code display language.",
+  "config.language.auto": "Follow the VS Code display language"
+}

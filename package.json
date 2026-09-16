@@ -1,0 +1,160 @@
+{
+  "name": "odoo-scenario-lab",
+  "displayName": "Odoo Scenario Lab",
+  "description": "%description%",
+  "version": "0.2.0",
+  "publisher": "your-publisher-id",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Testing",
+    "Debuggers",
+    "Other"
+  ],
+  "keywords": [
+    "odoo",
+    "testing",
+    "python",
+    "orm",
+    "debug",
+    "scenario",
+    "arabic"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "odooLab.runScenarios",
+        "title": "%command.runScenarios%",
+        "category": "Odoo Lab"
+      },
+      {
+        "command": "odooLab.configure",
+        "title": "%command.configure%",
+        "category": "Odoo Lab"
+      },
+      {
+        "command": "odooLab.checkConnection",
+        "title": "%command.checkConnection%",
+        "category": "Odoo Lab"
+      },
+      {
+        "command": "odooLab.clearResults",
+        "title": "%command.clearResults%",
+        "category": "Odoo Lab"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "odooLab.runScenarios",
+          "when": "editorLangId == python",
+          "group": "navigation@90"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "odooLab.runScenarios",
+          "when": "editorLangId == python"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "odooLab.runScenarios",
+        "key": "ctrl+alt+t",
+        "mac": "cmd+alt+t",
+        "when": "editorTextFocus && editorLangId == python"
+      }
+    ],
+    "configuration": {
+      "title": "Odoo Scenario Lab",
+      "properties": {
+        "odooLab.pythonPath": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "%config.pythonPath%"
+        },
+        "odooLab.odooPath": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "%config.odooPath%"
+        },
+        "odooLab.configFile": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "%config.configFile%"
+        },
+        "odooLab.database": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "%config.database%"
+        },
+        "odooLab.runAsUser": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "%config.runAsUser%"
+        },
+        "odooLab.timeoutSeconds": {
+          "type": "number",
+          "default": 20,
+          "minimum": 1,
+          "markdownDescription": "%config.timeoutSeconds%"
+        },
+        "odooLab.maxScenarios": {
+          "type": "number",
+          "default": 30,
+          "minimum": 1,
+          "maximum": 100,
+          "markdownDescription": "%config.maxScenarios%"
+        },
+        "odooLab.allowProductionDatabase": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "%config.allowProductionDatabase%"
+        },
+        "odooLab.enableCodeLens": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%config.enableCodeLens%"
+        },
+        "odooLab.language": {
+          "type": "string",
+          "default": "auto",
+          "enum": [
+            "auto",
+            "en",
+            "ar"
+          ],
+          "enumDescriptions": [
+            "%config.language.auto%",
+            "English",
+            "العربية"
+          ],
+          "markdownDescription": "%config.language%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-name/odoo-scenario-lab"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "1.85.0",
+    "@vscode/vsce": "^3.0.0",
+    "typescript": "^5.0.0"
+  }
+}
